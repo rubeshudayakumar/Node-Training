@@ -1,0 +1,11 @@
+{
+  "name": "create-an-http-server",
+  "version": "1.0.0",
+  "description": "create an http server to get random 5 colors which the previous exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rubesh",
+  "license": "ISC"
+}
