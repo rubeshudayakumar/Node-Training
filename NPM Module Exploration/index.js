@@ -15,7 +15,7 @@ http.createServer(async (req,res,err) => {
         max:  colorsLength,
         integer: true,
     });
-    // selecting the random five colors from the json --hi
+    // selecting the random five colors from the json 
     let randomFiveColors = [];
     let i = 1;
     while(i++<=5){
