@@ -9,13 +9,13 @@ http.createServer(async (req,res,err) => {
     // converting it to the json object
     let color_palette =  JSON.parse(response);
     let colorsLength = color_palette.length;
-    
+
     var gen = rn.generator({
         min:  0, 
         max:  colorsLength,
         integer: true,
     });
-    // selecting the random five colors from the json 
+    // selecting the random five colors from the json --hi
     let randomFiveColors = [];
     let i = 1;
     while(i++<=5){
