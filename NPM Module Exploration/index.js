@@ -9,6 +9,7 @@ http.createServer(async (req,res,err) => {
     // converting it to the json object
     let color_palette =  JSON.parse(response);
     let colorsLength = color_palette.length;
+    
     var gen = rn.generator({
         min:  0, 
         max:  colorsLength,
