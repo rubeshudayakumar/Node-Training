@@ -1,7 +1,6 @@
 const fs = require("fs");
 
-const fileWrite = (data) => {
-    // fs.writeFileSync("./data/cdw_ace23_buddies.json",JSON.stringify(data),"utf-8");    
+const fileWrite = (data) => {   
     return new Promise((resolve,reject) => {
         fs.writeFile("./data/cdw_ace23_buddies.json",JSON.stringify(data),"utf-8",(err,data) => {
             if(err){
