@@ -1,0 +1,14 @@
+{
+  "name": "buddys-nickname-project",
+  "version": "1.0.0",
+  "description": "buddy's nick name project to store the name of all the users in the json file ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rubesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
