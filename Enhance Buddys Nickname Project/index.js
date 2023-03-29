@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const FileIO = require("./modules/FileIO");
 const addBuddy = require("./routes/addBuddyRouter").router;
@@ -10,8 +11,14 @@ const getBuddy = require("./routes/getBuddyRouter").router;
 
 const port = 4000;
 
+const corsOptions = {
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+};
+
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(cors(corsOptions));
 
 app.use("/add-buddy",addBuddy);
 app.use("/update-buddy",updateBuddy);
