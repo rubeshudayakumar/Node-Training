@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const fs = require("fs");
 
 const FileIO = require("./modules/FileIO");
 const addBuddy = require("./routes/addBuddyRouter").router;
@@ -13,7 +14,7 @@ const port = 4000;
 
 const corsOptions = {
     "origin": "*",
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "methods": "GET,PUT,POST,DELETE",
 };
 
 app.use(express.urlencoded({extended:false}));
@@ -26,10 +27,9 @@ app.use("/delete-buddy",deleteBuddy);
 app.use("/list-all-buddies",listAllBuddies);
 app.use("/get-buddy",getBuddy);
 
-app.use("/create",(req,res) => {
-    FileIO.createFile();
-});
-
 app.listen(port, () => {
+    if(!fs.existsSync("./data/cdw_ace23_buddies.json")){
+        FileIO.createFile();
+    }
     console.log(`listening on port number : ${port}`)
 });
