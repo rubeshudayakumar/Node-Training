@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const fs = require("fs");
+require("dotenv").config();
 
 const FileIO = require("./modules/FileIO");
 const addBuddy = require("./routes/addBuddyRouter").router;
@@ -9,8 +10,6 @@ const updateBuddy = require("./routes/updateBuddyRouter").router;
 const deleteBuddy = require("./routes/deleteBuddyRouter").router;
 const listAllBuddies = require("./routes/listAllBuddiesRouter").router;
 const getBuddy = require("./routes/getBuddyRouter").router;
-
-const port = 4000;
 
 const corsOptions = {
     "origin": "*",
@@ -27,9 +26,9 @@ app.use("/delete-buddy",deleteBuddy);
 app.use("/list-all-buddies",listAllBuddies);
 app.use("/get-buddy",getBuddy);
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     if(!fs.existsSync("./data/cdw_ace23_buddies.json")){
         FileIO.createFile();
     }
-    console.log(`listening on port number : ${port}`)
+    console.log(`listening on port number : ${process.env.PORT}`)
 });
