@@ -1,4 +1,4 @@
-const { updateBuddy } = require("../controllers/BuddyWriteController");
+const { updateBuddy } = require("../controllers/BuddyWrite.controller");
 
 const router = require("express").Router();
 

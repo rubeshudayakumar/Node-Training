@@ -1,5 +1,5 @@
-const fileRead = require("../services/FileRead").fileRead;
-const fileWrite = require("../services/fileWrite").fileWrite;
+const fileRead = require("../services/FileRead.services").fileRead;
+const fileWrite = require("../services/fileWrite.services").fileWrite;
 const logger = require("../modules/Logger");
 
 const addBuddy = async (req,res,err) => {

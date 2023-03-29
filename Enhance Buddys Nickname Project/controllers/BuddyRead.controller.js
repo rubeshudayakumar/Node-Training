@@ -1,4 +1,4 @@
-const fileRead = require("../services/FileRead").fileRead;
+const fileRead = require("../services/FileRead.services").fileRead;
 const logger = require("../modules/Logger");
 
 const listAllBuddies = async (req,res) => {

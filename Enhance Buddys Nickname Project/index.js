@@ -5,11 +5,11 @@ const fs = require("fs");
 require("dotenv").config();
 
 const FileIO = require("./modules/FileIO");
-const addBuddy = require("./routes/addBuddyRouter").router;
-const updateBuddy = require("./routes/updateBuddyRouter").router;
-const deleteBuddy = require("./routes/deleteBuddyRouter").router;
-const listAllBuddies = require("./routes/listAllBuddiesRouter").router;
-const getBuddy = require("./routes/getBuddyRouter").router;
+const addBuddy = require("./routes/addBuddy.router").router;
+const updateBuddy = require("./routes/updateBuddy.router").router;
+const deleteBuddy = require("./routes/deleteBuddy.router").router;
+const listAllBuddies = require("./routes/listAllBuddies.router").router;
+const getBuddy = require("./routes/getBuddy.router").router;
 
 const corsOptions = {
     "origin": "*",
