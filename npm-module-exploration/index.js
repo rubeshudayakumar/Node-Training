@@ -5,27 +5,27 @@ const rn = require('random-number');
 
 http.createServer(async (req,res,err) => {
     // loading all the color palettes from the color_palette.json file
-    let response = await FileIO.loadJSONFile("./data/color_palette.json");
+    const response = FileIO.loadJSONFile("./data/color_palette.json");
     // converting it to the json object
-    let color_palette =  JSON.parse(response);
-    let colorsLength = color_palette.length;
+    const colorPalette =  JSON.parse(response);
+    const colorsLength = colorPalette.length;
 
-    var gen = rn.generator({
+    const gen = rn.generator({
         min:  0, 
         max:  colorsLength,
         integer: true,
     });
     // selecting the random five colors from the json 
     let randomFiveColors = [];
-    let i = 1;
-    while(i++<=5){
+    let counter = 1;
+    while(counter++<=5){
         // using the third party package to get the random number 
-       randomFiveColors.push(color_palette[gen()]);
+       randomFiveColors.push(colorPalette[gen()]);
     }
     // storing the 5 colors into the randomized_color_palette.json file
     FileIO.storeJSONFile(JSON.stringify(randomFiveColors));
     // loading from the randomized_color_palette.json and printing it to the console
-    let fiveColorsFromFIle = JSON.parse(await FileIO.loadJSONFile("./data/randomized_color_ palette.json"));
-    res.write(JSON.stringify(fiveColorsFromFIle));
+    let fiveColorsFromFile = JSON.parse(await FileIO.loadJSONFile("./data/randomized_color_palette.json"));
+    res.write(JSON.stringify(fiveColorsFromFile));
     res.end();
 }).listen(4000);
