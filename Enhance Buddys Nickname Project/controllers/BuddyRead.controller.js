@@ -5,7 +5,7 @@ const listAllBuddies = async (req,res) => {
     try{
         res.status(200).send(await fileRead());
     }catch(err){
-        logger.error(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        logger.warn(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
         res.status(500).send({"error" : "some error occured!"});
     }
 };

@@ -3,6 +3,7 @@ const { createLogger, format, transports } = require('winston');
 module.exports = createLogger({
     transports:
         new transports.File({
+            level: "error",
             filename: './logs/error.log',
             format: format.combine(
                 format.timestamp({format: 'MMM-DD-YYYY HH:mm:ss'}),
