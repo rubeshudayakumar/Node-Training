@@ -4,7 +4,7 @@ const cors = require("cors");
 const fs = require("fs");
 require("dotenv").config();
 
-const FileIO = require("./modules/FileIO");
+const FileIO = require("./utils/FileIO");
 const addBuddy = require("./routes/addBuddy.router").router;
 const updateBuddy = require("./routes/updateBuddy.router").router;
 const deleteBuddy = require("./routes/deleteBuddy.router").router;

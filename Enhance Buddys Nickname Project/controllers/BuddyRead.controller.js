@@ -1,11 +1,10 @@
 const fileRead = require("../services/FileRead.services").fileRead;
-const logger = require("../modules/Logger");
+const logger = require("../utils/Logger");
 
 const listAllBuddies = async (req,res) => {
     try{
         res.status(200).send(await fileRead());
     }catch(err){
-        logger.warn(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
         res.status(500).send({"error" : "some error occured!"});
     }
 };
@@ -14,6 +13,9 @@ const getBuddy = async (req,res) => {
     try{
         const fileData = await fileRead();
         const id = req.params.id;
+        if((/^[0-9]{1,30}$/).test(id)==false){
+            return res.status(403).send({"message": "invalid input"});
+        }
         let isFound = false;
         fileData.forEach(buddy => {
             if(buddy.employeeId == id){
@@ -23,7 +25,6 @@ const getBuddy = async (req,res) => {
         });
         if(!isFound) res.send({"message":"buddy not found"});
     }catch(err){
-        logger.error(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
         res.status(500).send({"error" : "some error occured!"});
     }
 }
