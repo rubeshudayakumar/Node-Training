@@ -10,6 +10,7 @@
   "author": "rubesh",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.21",
     "random-number": "^0.0.9"
   }
 }
