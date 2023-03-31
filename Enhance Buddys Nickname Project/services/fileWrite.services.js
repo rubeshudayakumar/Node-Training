@@ -1,6 +1,7 @@
 const fs = require("fs");
+const logger = require("../utils/Logger");
 
-const fileWrite = (data) => {   
+const fileWrite = (req,res,data) => {   
     return new Promise((resolve,reject) => {
         fs.writeFile("./data/cdw_ace23_buddies.json",JSON.stringify(data),"utf-8",(err,data) => {
             if(err){

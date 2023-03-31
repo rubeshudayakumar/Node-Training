@@ -1,0 +1,2 @@
+warn: Mar-30-2023 20:03:23: 	403 - undefined - Invalid input - /add-buddy - POST - ::1
+warn: Mar-30-2023 20:04:19: 	403 - undefined - Invalid input - /delete-buddy/dd - DELETE - ::1

@@ -1,47 +1,49 @@
 const fileRead = require("../services/FileRead.services").fileRead;
 const fileWrite = require("../services/fileWrite.services").fileWrite;
-const logger = require("../utils/Logger");
+const warnLogger = require("../utils/Logger").warnLogger;
 const { validator } = require("../utils/validator");
 
 const addBuddy = async (req,res,err) => {
     try{
-        const fileData = await fileRead();
+        const fileData = await fileRead(req,res);
         fileData.push(req.body);
         if(!validator(req.body)){
-            return res.status(403).send({"message": "input details are invalid"});
+            throw "Invalid input";
         }
-        await fileWrite(fileData);
+        await fileWrite(req,res,fileData);
         res.status(200).send({"message": "buddy detail added successfully!"});
     }catch(err){
-        res.status(500).send({"error" : "some error occured!"});
+        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(403).send({"message": "input details are invalid"});
     }
 };
 
 const updateBuddy = async (req,res,err) => {
     try{
-        const fileData = await fileRead();
+        const fileData = await fileRead(req,res);
         const id = req.params.id;
         if((/^[0-9]{1,30}$/).test(id)==false){
-            return res.status(403).send({"message": "invalid input"});
+            throw "Invalid input";
         }
         fileData.forEach((element,index,array) => {
             if(element.employeeId == id){
                 array[index] = req.body;
             }
         });
-        await fileWrite(fileData);
+        await fileWrite(req,res,fileData);
         res.status(200).send({"message": "data successfully updated"});
     }catch(err){
-        res.status(500).send({"error" : "some error occured!"});
+        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(403).send({"message": "input details are invalid"});
     }
 }
 
 const deleteBuddy = async (req,res,err) => {
     try{
-        const fileData = await fileRead();
+        const fileData = await fileRead(req,res);
         const id = req.params.id;
         if((/^[0-9]{1,30}$/).test(id)==false){
-            return res.status(403).send({"message": "invalid input"});
+            throw "Invalid input";
         }
         let index = 0;
         fileData.forEach((element,i,array) => {
@@ -50,9 +52,10 @@ const deleteBuddy = async (req,res,err) => {
             }
         });
         fileData.splice(index,1);
-        await fileWrite(fileData);
+        await fileWrite(req,res,fileData);
         res.status(200).send({"message" : "data deleted successfully"});
     }catch(err){
+        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
         res.status(500).send({"error" : "some error occured!"});
     }
 }
