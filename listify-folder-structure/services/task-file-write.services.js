@@ -1,0 +1,1 @@
+const errorLogger = require("../utils/logger").errorLogger;

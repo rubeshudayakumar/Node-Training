@@ -1,3 +1,5 @@
+const warnLogger = require("../utils/logger").warnLogger;
+
 const userLogin = (req,res) => {
     res.send({"message": "login route"});
 }
