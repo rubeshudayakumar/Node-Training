@@ -26,7 +26,7 @@ const getBuddy = async (req,res) => {
         });
         if(!isFound) res.send({"message":"buddy not found"});
     }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
         res.status(403).send({"message": "input details are invalid"});
     }
 }

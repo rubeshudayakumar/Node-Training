@@ -13,8 +13,8 @@ const addBuddy = async (req,res,err) => {
         await fileWrite(req,res,fileData);
         res.status(200).send({"message": "buddy detail added successfully!"});
     }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-        res.status(403).send({"message": "input details are invalid"});
+        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(403).send({"message": `${err}`});
     }
 };
 
@@ -25,16 +25,24 @@ const updateBuddy = async (req,res,err) => {
         if((/^[0-9]{1,30}$/).test(id)==false){
             throw "Invalid input";
         }
+        if(!validator(req.body)){
+            throw "Invalid Input";
+        }
+        let isFound = false;
         fileData.forEach((element,index,array) => {
             if(element.employeeId == id){
                 array[index] = req.body;
+                isFound = true;
             }
         });
+        if(isFound==false){
+            throw "Buddy not found"
+        }
         await fileWrite(req,res,fileData);
         res.status(200).send({"message": "data successfully updated"});
     }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-        res.status(403).send({"message": "input details are invalid"});
+        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(403).send({"message": `${err}`});
     }
 }
 
@@ -45,18 +53,23 @@ const deleteBuddy = async (req,res,err) => {
         if((/^[0-9]{1,30}$/).test(id)==false){
             throw "Invalid input";
         }
+        let isFound = false;
         let index = 0;
         fileData.forEach((element,i,array) => {
             if(element.employeeId == id){
                 index = i;
+                isFound = true;
             }
         });
+        if(isFound==false){
+            throw "Buddy not found";
+        }
         fileData.splice(index,1);
         await fileWrite(req,res,fileData);
         res.status(200).send({"message" : "data deleted successfully"});
     }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${res.statusMessage} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-        res.status(500).send({"error" : "some error occured!"});
+        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(500).send({"error" : `${err}`});
     }
 }
 

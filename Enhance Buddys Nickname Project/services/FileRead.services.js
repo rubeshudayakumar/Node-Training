@@ -5,7 +5,7 @@ const fileRead = (req,res) => {
     return new Promise((resolve,reject) => {
         fs.readFile("./data/cdw_ace23_buddies.json","utf-8",(err,data) => {
             if(err){
-                errorLogger.error(`${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+                errorLogger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
                 reject(err);
             }
             else{

@@ -26,6 +26,10 @@ app.use("/delete-buddy",deleteBuddy);
 app.use("/list-all-buddies",listAllBuddies);
 app.use("/get-buddy",getBuddy);
 
+app.use("/",(req,res) => {
+    res.send({"message": "invalid url path"});
+})
+
 app.listen(process.env.PORT, () => {
     if(!fs.existsSync("./data/cdw_ace23_buddies.json")){
         FileIO.createFile();

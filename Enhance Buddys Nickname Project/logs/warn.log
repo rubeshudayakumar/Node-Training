@@ -1,2 +1,14 @@
-warn: Mar-30-2023 20:03:23: 	403 - undefined - Invalid input - /add-buddy - POST - ::1
-warn: Mar-30-2023 20:04:19: 	403 - undefined - Invalid input - /delete-buddy/dd - DELETE - ::1
+warn: Apr-03-2023 06:32:53: 	403 - Invalid input - /delete-buddy/gvh - DELETE - ::1
+warn: Apr-03-2023 06:33:13: 	403 - Invalid input - /delete-buddy/@ee - DELETE - ::1
+warn: Apr-03-2023 06:33:23: 	403 - Invalid input - /add-buddy - POST - ::1
+warn: Apr-03-2023 06:35:23: 	403 - Invalid input - /add-buddy - POST - ::1
+warn: Apr-03-2023 06:35:57: 	403 - Invalid input - /add-buddy - POST - ::1
+warn: Apr-03-2023 06:38:44: 	403 - Invalid Input - /update-buddy/2 - PUT - ::1
+warn: Apr-03-2023 06:40:16: 	403 - Invalid Input - /update-buddy/2 - PUT - ::1
+warn: Apr-03-2023 06:40:20: 	403 - Invalid input - /delete-buddy/@ee - DELETE - ::1
+warn: Apr-03-2023 06:44:23: 	403 - Buddy not found - /delete-buddy/3 - DELETE - ::1
+warn: Apr-03-2023 06:45:52: 	403 - Buddy not found - /delete-buddy/3 - DELETE - ::1
+warn: Apr-03-2023 06:45:56: 	403 - Invalid Input - /update-buddy/2 - PUT - ::1
+warn: Apr-03-2023 06:46:07: 	403 - Buddy not found - /update-buddy/2 - PUT - ::1
+warn: Apr-03-2023 06:46:35: 	403 - Invalid input - /add-buddy - POST - ::1
+warn: Apr-03-2023 06:47:23: 	403 - Buddy not found - /delete-buddy/3 - DELETE - ::1
