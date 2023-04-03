@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 
-const FileIO = require("./modules/FileIO");
+const FileIO = require("./utils/FileIO");
 const addBuddy = require("./routes/addBuddyRouter").router;
 const updateBuddy = require("./routes/updateBuddyRouter").router;
 const deleteBuddy = require("./routes/deleteBuddyRouter").router;
