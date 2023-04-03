@@ -22,7 +22,7 @@ const updateBuddy = async (req,res,err) => {
     try{
         const fileData = await fileRead(req,res);
         const id = req.params.id;
-        if((/^[0-9]{1,30}$/).test(id)==false){
+        if((/^[0-9]{1,30}$/).test(id)==false || req.params.id!=req.body.employeeId){
             throw "Invalid input";
         }
         if(!validator(req.body)){
