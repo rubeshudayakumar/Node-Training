@@ -8,10 +8,10 @@ const userIdAndPasswordValidator = (user) => {
 const isUserExists = (users,userName) => {
     for(var i=0;i<users.length;i++){
         if(users[i].userName==userName){
-            return true;
+            return i;
         }
     }
-    return false;
+    return -1;
 }
 
 module.exports = {

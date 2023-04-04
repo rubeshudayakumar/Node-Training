@@ -1,18 +1,19 @@
 const router = require("express").Router();
 const taskController = require("../controllers/task.controller");
+const authentication = require("../middleware/auth").verifyToken;
 
-router.post("/create",taskController.createTask);
+router.post("/create",authentication,taskController.createTask);
 
-router.delete("/delete",taskController.deleteTask);
+router.delete("/delete",authentication,taskController.deleteTask);
 
-router.get("/filter",taskController.filterTask);
+router.get("/filter",authentication,taskController.filterTask);
 
-router.get("/read-by-id",taskController.readTaskById);
+router.get("/read-by-id",authentication,taskController.readTaskById);
 
-router.get("/read-all",taskController.readAllTasks);
+router.get("/read-all",authentication,taskController.readAllTasks);
 
-router.get("/sort",taskController.sortTask);
+router.get("/sort",authentication,taskController.sortTask);
 
-router.put("/update",taskController.updateTask);
+router.put("/update",authentication,taskController.updateTask);
 
 module.exports = router;

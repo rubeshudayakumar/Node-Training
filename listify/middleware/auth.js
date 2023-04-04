@@ -5,17 +5,22 @@ const verifyToken = (req, res, next) => {
     let token;
     let decoded;
     try {
-        console.log(req.headers.authorization);
         token = (req.headers.authorization).split(' ')[1];
-        if(token) decoded = jwt.verify(token, process.env.JWTSECRETKEY);
-
-        console.log(decoded);
-        res.status(200).send(decoded);
+        if(token) decoded = jwt.verify(token, process.env.SECRET_KEY);
+        req.user = decoded;
         return next();
     } catch(err) {
-        res.status(403).send("Invalid Token");
+        res.status(403).send({message : "Invalid token"});
     }
     return next();
 }
 
-module.exports = verifyToken;
+const generateToken = (userData) => {
+    const token = jwt.sign({"userName": userData},process.env.SECRET_KEY,{expiresIn: "1h"});
+    return token;
+}
+
+module.exports = {
+    verifyToken,
+    generateToken,
+};
