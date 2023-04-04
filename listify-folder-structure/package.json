@@ -1,16 +1,19 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "winston": "^3.8.2"
-  },
+  "name": "listify",
+  "version": "1.0.0",
+  "description": "listify app to manage the tasks",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "name": "listify-folder-structure",
-  "version": "1.0.0",
-  "description": "listify app folder structure",
-  "main": "server.js",
   "author": "rubesh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "winston": "^3.8.2"
+  }
 }
