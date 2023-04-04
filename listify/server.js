@@ -27,7 +27,7 @@ app.listen(4000,() => {
         fs.writeFileSync("./data/user_data.json","[]","UTF-8");
     }
     if(!fs.existsSync("./data/tasks_data.json")){
-        fs.writeFileSync("./data/tasks_data.json","[]","UTF-8");
+        fs.writeFileSync("./data/tasks_data.json","{}","UTF-8");
     }
     console.log("listening in port number : "+4000);
 });
