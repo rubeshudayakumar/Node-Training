@@ -1,0 +1,2 @@
+warn: Apr-04-2023 18:05:07: 	403 - Error: user already exists - /user/register - POST - ::1
+warn: Apr-04-2023 18:05:22: 	403 - Error: username and passwords are invalid format - /user/register - POST - ::1

@@ -5,6 +5,16 @@ const userIdAndPasswordValidator = (user) => {
     return true;
 }
 
+const isUserExists = (users,userName) => {
+    for(var i=0;i<users.length;i++){
+        if(users[i].userName==userName){
+            return true;
+        }
+    }
+    return false;
+}
+
 module.exports = {
     userIdAndPasswordValidator,
+    isUserExists,
 }
