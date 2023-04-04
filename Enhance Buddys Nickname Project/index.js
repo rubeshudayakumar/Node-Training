@@ -5,11 +5,7 @@ const fs = require("fs");
 require("dotenv").config();
 
 const FileIO = require("./utils/FileIO");
-const addBuddy = require("./routes/addBuddy.router").router;
-const updateBuddy = require("./routes/updateBuddy.router").router;
-const deleteBuddy = require("./routes/deleteBuddy.router").router;
-const listAllBuddies = require("./routes/listAllBuddies.router").router;
-const getBuddy = require("./routes/getBuddy.router").router;
+const buddyRouter = require("./routes/buddy.router");
 
 const corsOptions = {
     "origin": "*",
@@ -20,11 +16,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cors(corsOptions));
 
-app.use("/add-buddy",addBuddy);
-app.use("/update-buddy",updateBuddy);
-app.use("/delete-buddy",deleteBuddy);
-app.use("/list-all-buddies",listAllBuddies);
-app.use("/get-buddy",getBuddy);
+app.use("/buddy",buddyRouter);
 
 app.use("/",(req,res) => {
     res.send({"message": "invalid url path"});

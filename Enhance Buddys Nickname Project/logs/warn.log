@@ -12,3 +12,4 @@ warn: Apr-03-2023 06:45:56: 	403 - Invalid Input - /update-buddy/2 - PUT - ::1
 warn: Apr-03-2023 06:46:07: 	403 - Buddy not found - /update-buddy/2 - PUT - ::1
 warn: Apr-03-2023 06:46:35: 	403 - Invalid input - /add-buddy - POST - ::1
 warn: Apr-03-2023 06:47:23: 	403 - Buddy not found - /delete-buddy/3 - DELETE - ::1
+warn: Apr-04-2023 20:09:52: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
