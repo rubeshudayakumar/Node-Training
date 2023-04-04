@@ -5,14 +5,6 @@ const fs = require("fs");
 
 const userRouter = require("./routes/user.router");
 const taskRouter = require("./routes/task.router");
-// const deleteTaskRouter = require("./routes/delete-task.router");
-// const filterTasksRouter = require("./routes/filter-tasks.router");
-// const loginRouter = require("./routes/login.router");
-// const readTaskByIdRouter = require("./routes/read-task-by-id.router");
-// const readAllTasksRouter = require("./routes/read-tasks.router");
-// const userRegisterRouter = require("./routes/register.router");
-// const sortTaskRouter = require("./routes/sort-tasks.router");
-// const updateTaskRouter = require("./routes/update-task.router");
 
 const corsOptions = {
     origin: "*",
@@ -25,14 +17,6 @@ app.use(cors(corsOptions));
 
 app.use("/user",userRouter);
 app.use("/task",taskRouter);
-// app.use("/delete-task",deleteTaskRouter);
-// app.use("/filter-tasks",filterTasksRouter);
-// app.use("/user-login",loginRouter);
-// app.use("/read-task-by-id",readTaskByIdRouter);
-// app.use("/read-all-tasks",readAllTasksRouter);
-// app.use("/user-register",userRegisterRouter);
-// app.use("/sort-tasks",sortTaskRouter);
-// app.use("/update-task",updateTaskRouter);
 
 app.use("/",(req,res) => {
     res.status(404).send({"message":"couldn't display the requested page"})
