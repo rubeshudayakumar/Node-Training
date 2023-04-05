@@ -32,7 +32,6 @@ const deleteBuddy = async (req,res,err) => {
     if((/^[0-9]{1,30}$/).test(id)==false){
         return res.send({"message": "invalid id"});
     }
-    if(!validator(req.body)) return res.send({"message": "invalid inputs"});
     let index = 0;
     fileData.forEach((element,i,array) => {
         if(element.employeeId == id){
