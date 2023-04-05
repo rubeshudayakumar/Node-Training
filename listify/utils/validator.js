@@ -41,9 +41,19 @@ const taskIdValidator = (taskId) => {
     return true;
 }
 
+const checkIfTaskExists = (tasks,taskId) => {
+    for(var k = 0; k< tasks.length; k++){
+        if(tasks[k].taskId == taskId){
+            return k;
+        }
+    }
+    return -1;
+}
+
 module.exports = {
     userIdAndPasswordValidator,
     isUserExists,
     taskValidator,
     taskIdValidator,
+    checkIfTaskExists,
 }

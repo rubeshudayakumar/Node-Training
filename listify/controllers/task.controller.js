@@ -8,6 +8,10 @@ const createTask = async (req,res) => {
             throw new Error("tasks details are invalid");
         }
         const taskData = await taskService.readTask(req,res);
+        console.log(validator.checkIfTaskExists(taskData[req.user.userName],req.body.taskId));
+        if(validator.checkIfTaskExists(taskData[req.user.userName],req.body.taskId)!=-1){
+            throw new Error("task with this id already exists");
+        }
         taskData[req.user.userName].push(req.body);
         await taskService.writeTask(req,res,taskData);
         res.send({message: "task was created successfully"});
@@ -58,20 +62,52 @@ const readTaskById = async (req,res) => {
     }
 }
 
+const updateTask = async (req,res) => {
+    try{
+        const taskData = await taskService.readTask(req,res);
+        const taskIndex = validator.checkIfTaskExists(taskData[req.user.userName],req.body.taskId);
+        if(taskIndex==-1){
+            throw new Error("task doesn't exists");
+        }
+        if(!validator.taskValidator(req.body)){
+            throw new Error("tasks details are invalid");
+        }
+        taskData[req.user.userName][taskIndex] = req.body;
+        await taskService.writeTask(req,res,taskData);
+        res.status(200).send({message : "task was updated successfully"});
+    }
+    catch(err){
+        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(403).send({"message" : err.message});
+    }   
+}
+
+const deleteTask = async (req,res) => {
+    try{
+        if(validator.taskIdValidator(req.body.taskId) == false){
+            throw new Error("invalid id");
+        }
+        const taskData = await taskService.readTask(req,res);
+        const taskIndex = validator.checkIfTaskExists(taskData[req.user.userName],req.body.taskId);
+        if(taskIndex==-1){
+            throw new Error("can't delete the task which doesn't exists");
+        }
+        taskData[req.user.userName].splice(taskIndex,1);
+        await taskService.writeTask(req,res,taskData);
+        res.status(200).send({message : "task was deleted successfully"});
+    }
+    catch(err){
+        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+        res.status(403).send({"message" : err.message});
+    }
+}
+
 const filterTask = (req,res) => {
     res.send({"message": "filter task router"});
 }
 
 const sortTask = (req,res) => {
     res.send({"message" : "sort task route"});
-}
-
-const deleteTask = (req,res) => {
-    res.send({"message": "delete task route"});
-}
-
-const updateTask = (req,res) => {
-    res.send({"message": "update task route"});
 }
 
 module.exports = {

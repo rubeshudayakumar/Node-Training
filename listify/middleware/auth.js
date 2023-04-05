@@ -10,9 +10,8 @@ const verifyToken = (req, res, next) => {
         req.user = decoded;
         return next();
     } catch(err) {
-        res.status(403).send({message : "Invalid token"});
+        return res.status(403).send({message : "Invalid token"});
     }
-    return next();
 }
 
 const generateToken = (userData) => {

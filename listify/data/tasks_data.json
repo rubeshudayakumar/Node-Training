@@ -20,8 +20,8 @@
   ],
   "thanika": [
     {
-      "taskId": "1",
-      "title": "complete java exercises",
+      "taskId": "2",
+      "title": "complete UI of exercises",
       "description": "complete all the java related exerciese",
       "priority": "MEDIUM",
       "dueDate": "18-04-2023",
