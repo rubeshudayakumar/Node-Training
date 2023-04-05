@@ -6,6 +6,16 @@ const validator = (buddy) => {
     return true;
 }
 
+const checkIfEmployeeExists = (employees,employeeId) => {
+    for(var i=0;i<employees.length;i++){
+        if(employees[i].employeeId == employeeId){
+            return true;
+        }
+    }
+    return false;
+}
+
 module.exports = {
     validator,
+    checkIfEmployeeExists
 }

@@ -1,15 +1,18 @@
 const fileRead = require("../services/FileRead.services").fileRead;
 const fileWrite = require("../services/fileWrite.services").fileWrite;
 const warnLogger = require("../utils/Logger").warnLogger;
-const { validator } = require("../utils/validator");
+const { validator,checkIfEmployeeExists } = require("../utils/validator");
 
 const addBuddy = async (req,res,err) => {
     try{
         const fileData = await fileRead(req,res);
-        fileData.push(req.body);
         if(!validator(req.body)){
             throw "Invalid input";
         }
+        if(checkIfEmployeeExists(fileData,req.body.employeeId)==true){
+            throw "Employee exists";
+        }
+        fileData.push(req.body);
         await fileWrite(req,res,fileData);
         res.status(200).send({"message": "buddy detail added successfully!"});
     }catch(err){
