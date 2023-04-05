@@ -1,1 +1,10 @@
-[{"userName":"rubeshu","password":"$2b$10$LZhUdoydZrq.hnt9Uqmst.PurvCT0GUJA034g0y9IiA/z1drljkbi"},{"userName":"thanika","password":"$2b$10$cLP/S6Xp6Tb6Ts6lHqN3o.Kf0ZdosnVtSEkwGtvrzbDoyOadG0P8u"}]
+[
+  {
+    "userName": "rubeshu",
+    "password": "$2b$10$LZhUdoydZrq.hnt9Uqmst.PurvCT0GUJA034g0y9IiA/z1drljkbi"
+  },
+  {
+    "userName": "thanika",
+    "password": "$2b$10$cLP/S6Xp6Tb6Ts6lHqN3o.Kf0ZdosnVtSEkwGtvrzbDoyOadG0P8u"
+  }
+]
