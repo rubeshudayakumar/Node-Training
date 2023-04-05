@@ -1,79 +1,62 @@
 const fileRead = require("../services/FileRead.services").fileRead;
 const fileWrite = require("../services/fileWrite.services").fileWrite;
 const warnLogger = require("../utils/Logger").warnLogger;
-const { validator,checkIfEmployeeExists } = require("../utils/validator");
+const {httpSuccessObject,httpWarnObject} = require("../utils/responseObject");
+const { validator,checkIfEmployeeExists,idValidator } = require("../utils/validator");
 
 const addBuddy = async (req,res,err) => {
-    try{
         const fileData = await fileRead(req,res);
         if(!validator(req.body)){
-            throw "Invalid input";
-        }
+            return httpWarnObject(req,res,"Invalid input");
+        } 
         if(checkIfEmployeeExists(fileData,req.body.employeeId)==true){
-            throw "Employee exists";
+            return httpWarnObject(req,res,"Employee exists");
         }
         fileData.push(req.body);
         await fileWrite(req,res,fileData);
-        res.status(200).send({"message": "buddy detail added successfully!"});
-    }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-        res.status(403).send({"message": `${err}`});
-    }
+        httpSuccessObject(req,res,{"message": "buddy detail added successfully!"});
 };
 
 const updateBuddy = async (req,res,err) => {
-    try{
-        const fileData = await fileRead(req,res);
-        const id = req.params.id;
-        if((/^[0-9]{1,30}$/).test(id)==false || req.params.id!=req.body.employeeId){
-            throw "Invalid input";
-        }
-        if(!validator(req.body)){
-            throw "Invalid Input";
-        }
-        let isFound = false;
-        fileData.forEach((element,index,array) => {
-            if(element.employeeId == id){
-                array[index] = req.body;
-                isFound = true;
-            }
-        });
-        if(isFound==false){
-            throw "Buddy not found"
-        }
-        await fileWrite(req,res,fileData);
-        res.status(200).send({"message": "data successfully updated"});
-    }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-        res.status(403).send({"message": `${err}`});
+    const fileData = await fileRead(req,res);
+    const id = req.params.id;
+    if(!idValidator(id,req.body.employeeId) || !validator(req.body)){
+        return httpWarnObject(req,res,"Invalid inputs");
     }
+    let isFound = false;
+    fileData.forEach((element,index,array) => {
+        if(element.employeeId == id){
+            array[index] = req.body;
+            isFound = true;
+        }
+    });
+    if(isFound==false){
+        return httpWarnObject(req,res,"Buddy not found")
+    }
+    await fileWrite(req,res,fileData);
+    httpSuccessObject(req,res,{"message": "data successfully updated"});
 }
 
 const deleteBuddy = async (req,res,err) => {
-    try{
-        const fileData = await fileRead(req,res);
-        const id = req.params.id;
-        if((/^[0-9]{1,30}$/).test(id)==false){
-            throw "Invalid input";
-        }
-        let isFound = false;
-        let index = 0;
-        fileData.forEach((element,i,array) => {
-            if(element.employeeId == id){
-                index = i;
-                isFound = true;
-            }
-        });
-        if(isFound==false){
-            throw "Buddy not found";
-        }
-        fileData.splice(index,1);
-        await fileWrite(req,res,fileData);
-        res.status(200).send({"message" : "data deleted successfully"});
-    }catch(err){
-        warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-        res.status(500).send({"error" : `${err}`});
+    const fileData = await fileRead(req,res);
+    const id = req.params.id;
+    if((/^[0-9]{1,30}$/).test(id)==false){
+        return httpWarnObject(req,res,"Invalid id");
     }
+    let isFound = false;
+    let index = 0;
+    fileData.forEach((element,i,array) => {
+        if(element.employeeId == id){
+            index = i;
+            isFound = true;
+        }
+    });
+    if(isFound==false){
+        return httpWarnObject(req,res,"Buddy not found");
+    }
+    fileData.splice(index,1);
+    await fileWrite(req,res,fileData);
+    httpSuccessObject(req,res,{"message" : "data deleted successfully"});
 }
 
 module.exports = {

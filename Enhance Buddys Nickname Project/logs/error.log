@@ -1,1 +1,10 @@
 error: Apr-03-2023 06:30:37: 	500 - ENOENT: no such file or directory, open './data/cw_ace23_buddies.json' - /list-all-buddies - GET - ::1
+error: Apr-05-2023 22:54:46: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_buddes.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:56:57: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:58:09: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:58:12: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:58:12: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:58:12: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:58:13: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 22:58:45: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
+error: Apr-05-2023 23:00:05: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/get-buddy/333 - GET - ::ffff:127.0.0.1

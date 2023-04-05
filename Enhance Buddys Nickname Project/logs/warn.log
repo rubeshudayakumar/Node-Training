@@ -31,3 +31,29 @@ warn: Apr-05-2023 17:11:37: 	403 - Employee exists - /buddy/add-buddy - POST - :
 warn: Apr-05-2023 17:11:38: 	403 - Employee exists - /buddy/add-buddy - POST - ::ffff:127.0.0.1
 warn: Apr-05-2023 17:11:45: 	403 - Employee exists - /buddy/add-buddy - POST - ::ffff:127.0.0.1
 warn: Apr-05-2023 17:12:26: 	403 - Employee exists - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:40:33: 	403 - Invalid input - /buddy/get-buddy/2ddd - GET - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:40:43: 	403 - Invalid input - /buddy/delete-buddy/1daa - DELETE - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:40:46: 	403 - Buddy not found - /buddy/delete-buddy/1 - DELETE - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:40:54: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:06: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:11: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:19: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:27: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:44: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:51: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 22:41:58: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:01:19: 	403 - Invalid input - /buddy/get-buddy/3ddd - GET - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:06:13: 	403 - Invalid input - /buddy/get-buddy/3ddd - GET - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:06:30: 	403 - Invalid input - /buddy/get-buddy/3ddd - GET - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:14:56: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:15:11: 	403 - Employee exists - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:15:18: 	403 - Invalid sssinput - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:15:35: 	403 - Invalid input - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:15:44: 	403 - Employee exists - /buddy/add-buddy - POST - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:21:46: 	403 - Invalid inputs - /buddy/update-buddy/4ass - PUT - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:21:52: 	403 - Invalid inputs - /buddy/update-buddy/4 - PUT - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:22:20: 	403 - Buddy not found - /buddy/update-buddy/5 - PUT - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:26:47: 	403 - Invalid id - /buddy/delete-buddy/1gtg - DELETE - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:27:07: 	403 - Invalid id - /buddy/delete-buddy/1gtg - DELETE - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:27:08: 	403 - Invalid id - /buddy/delete-buddy/1gtg - DELETE - ::ffff:127.0.0.1
+warn: Apr-05-2023 23:27:13: 	403 - Buddy not found - /buddy/delete-buddy/1678 - DELETE - ::ffff:127.0.0.1

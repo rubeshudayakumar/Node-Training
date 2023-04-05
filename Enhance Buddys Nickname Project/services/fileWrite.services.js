@@ -1,18 +1,21 @@
 const fs = require("fs");
-const errorLogger = require("../utils/Logger").errorLogger;
-
+const {httpErrorObject} = require("../utils/responseObject");
 const path = "./data/cdw_ace23_buddies.json";
 
 const fileWrite = (req,res,data) => {   
     return new Promise((resolve,reject) => {
-        fs.writeFile(path,JSON.stringify(data),"utf-8",(err,data) => {
-            if(err){
-                errorLogger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-                reject(err);
-            }else{
-                resolve(data);
-            }
-        });
+        try{
+            fs.writeFile(path,JSON.stringify(data),"utf-8",(err,data) => {
+                if(err){
+                    httpErrorObject(req,res,err);
+                }else{
+                    resolve(data);
+                }
+            });
+        }
+        catch(err){
+            reject(err);
+        }
     });
 }
 
