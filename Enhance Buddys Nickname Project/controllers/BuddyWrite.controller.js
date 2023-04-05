@@ -1,6 +1,5 @@
 const fileRead = require("../services/FileRead.services").fileRead;
 const fileWrite = require("../services/fileWrite.services").fileWrite;
-const warnLogger = require("../utils/Logger").warnLogger;
 const {httpSuccessObject,httpWarnObject} = require("../utils/responseObject");
 const { validator,checkIfEmployeeExists,idValidator } = require("../utils/validator");
 
