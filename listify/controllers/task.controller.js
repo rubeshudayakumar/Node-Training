@@ -1,6 +1,7 @@
 const warnLogger = require("../utils/logger").warnLogger;
 const validator = require("../utils/validator");
 const taskService = require("../services/task.services");
+const {httpSuccessObject} = require("../utils/responseObject");
 
 const createTask = async (req,res) => {
     try{
@@ -14,7 +15,7 @@ const createTask = async (req,res) => {
         }
         taskData[req.user.userName].push(req.body);
         await taskService.writeTask(req,res,taskData);
-        res.send({message: "task was created successfully"});
+        httpSuccessObject(req,res,{message: "task was created successfully"});
     }
     catch(err){
         warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -27,9 +28,9 @@ const readAllTasks = async (req,res) => {
         const tasks = await taskService.readTask(req,res);
         const userTasks = tasks[req.user.userName];
         if(userTasks.length == 0){
-            res.status(404).send({message : "there are no tasks to display"})
+            httpSuccessObject(req,res,{message : "there are no tasks to display"})
         }else{
-            res.status(200).send(userTasks);
+            httpSuccessObject(req,res,userTasks);
         }
     }
     catch(err){
@@ -54,7 +55,7 @@ const readTaskById = async (req,res) => {
             }
         });
         if(isTaskFound) return res.status(200).send(taskData);
-        res.send({message : "task not found"});
+        httpSuccessObject(req,res,{message : "task not found"});
     }
     catch(err){
         warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -74,7 +75,7 @@ const updateTask = async (req,res) => {
         }
         taskData[req.user.userName][taskIndex] = req.body;
         await taskService.writeTask(req,res,taskData);
-        res.status(200).send({message : "task was updated successfully"});
+        httpSuccessObject(req,res,{message : "task was updated successfully"});
     }
     catch(err){
         warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -94,7 +95,7 @@ const deleteTask = async (req,res) => {
         }
         taskData[req.user.userName].splice(taskIndex,1);
         await taskService.writeTask(req,res,taskData);
-        res.status(200).send({message : "task was deleted successfully"});
+        httpSuccessObject(req,res,{message : "task was deleted successfully"});
     }
     catch(err){
         warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);

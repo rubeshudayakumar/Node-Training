@@ -1,6 +1,19 @@
+const userValidateObjects = [
+    {
+        keyName: "userName",
+        regEx: /^[a-zA-Z_]{1,30}$/,
+    },
+    {
+        keyName: "password",
+        regEx: /^[a-zA-Z0-9\W]{8,}$/,
+    }
+];
+
 const userIdAndPasswordValidator = (user) => {
-    if((/^[a-zA-Z_]{1,30}$/).test(user.userName)==false || (/^[a-zA-Z0-9\W]{8,}$/).test(user.password)==false || user.userName==undefined || user.password==undefined){
-        return false;
+    for(var i=0;i<userValidateObjects.length;i++){
+        if(!(userValidateObjects[i].regEx).test(user[userValidateObjects[i].keyName]) || !(userValidateObjects[i].keyName in user)){
+            return false;
+        }
     }
     return true;
 }
@@ -14,20 +27,44 @@ const isUserExists = (users,userName) => {
     return -1;
 }
 
+const taskValidateObjects = [
+    {
+        keyName: "taskId",
+        regEx: /^[0-9]{1,10}$/,
+    },
+    {
+        keyName: "title",
+        regEx: /^[a-zA-Z0-9 ]{1,50}$/,
+    },
+    {
+        keyName: "description",
+        regEx: /^[a-zA-Z0-9 ]{1,200}$/,
+    },
+    {
+        keyName: "priority",
+        regEx: /^(LOW|MEDIUM|HIGH)$/,
+    },
+    {
+        keyName: "dueDate",
+        regEx: /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/,
+    },
+];
+
+
 const taskValidator = (task) => {
-    if((/^[0-9]{1,10}$/).test(task.taskId) == false || task.taskId == undefined
-    || (/^[a-zA-Z0-9 ]{1,50}$/).test(task.title) == false  || task.title == undefined
-    || (/^[a-zA-Z0-9 ]{1,200}$/).test(task.description) == false || task.description == undefined
-    || (/^(LOW|MEDIUM|HIGH)$/).test(task.priority) == false || task.priority == undefined
-    || (/^[0-9]{2}-[0-9]{2}-[0-9]{4}$/).test(task.dueDate) == false || task.dueDate == undefined
-    || Array.isArray(task.taskComments) == false || task.taskComments == undefined){
+    for(var i=0;i<taskValidateObjects.length;i++){
+        if(!(taskValidateObjects[i].regEx).test(task[taskValidateObjects[i].keyName]) || !(taskValidateObjects[i].keyName in task)){
+            return false;
+        }
+    }
+    if(!Array.isArray(task.taskComments) || !("taskComments" in task)){
         return false;
     }
     for(let j=0;j<task.taskComments.length;j++){
-        if((/^[0-9]{13,}$/).test(task.taskComments[j].timeStamp)==false 
-            || task.taskComments[j].timeStamp == undefined
-            || (/^[a-zA-Z0-9 ]{1,100}$/).test(task.taskComments[j].comment) == false
-            || task.taskComments[j].comment == undefined){
+        if( !(/^[0-9]{13,}$/).test(task.taskComments[j].timeStamp)
+            || !("timeStamp"  in task.taskComments[j])
+            || !(/^[a-zA-Z0-9 ]{1,100}$/).test(task.taskComments[j].comment)
+            || !("comment" in task.taskComments[j])){
             return false;
         }
     }

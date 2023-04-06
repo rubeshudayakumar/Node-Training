@@ -3,6 +3,7 @@ const validator = require("../utils/validator");
 const userService = require("../services/user.services");
 const taskService = require("../services/task.services");
 const bcrypt = require("bcrypt");
+const { httpSuccessObject } = require("../utils/responseObject");
 const auth = require("../middleware/auth").generateToken;
 const saltRounds = 10;
 
@@ -20,7 +21,7 @@ const userLogin = async (req,res) => {
             throw new Error("password incorrect");
         }
         const token = auth(req.body.userName);
-        res.status(200).send({"token" : token});
+        httpSuccessObject(req,res,{"token" : token});
     }
     catch(err){
         warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -46,7 +47,7 @@ const userRegister = async (req,res) => {
         await taskService.writeTask(req,res,tasksData);
         await userService.writeUser(req,res,userData);
         const token = auth(req.body.userName);
-        res.status(200).send({"token" : token});
+        httpSuccessObject(req,res,{"token" : token});
     }
     catch(err){
         warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
