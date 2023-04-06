@@ -15,7 +15,7 @@ const createTask = async (req,res) => {
     taskData[req.user.userName].push(req.body);
     await taskService.writeTask(req,res,taskData);
     httpSuccessObject(req,res,{message: "task was created successfully"});
-} 
+}
 
 const readAllTasks = async (req,res) => {
     const tasks = await taskService.readTask(req,res);
