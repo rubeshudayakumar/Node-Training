@@ -1,4 +1,3 @@
-const warnLogger = require("../utils/logger").warnLogger;
 const validator = require("../utils/validator");
 const userService = require("../services/user.services");
 const taskService = require("../services/task.services");

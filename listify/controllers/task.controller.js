@@ -1,4 +1,3 @@
-const warnLogger = require("../utils/logger").warnLogger;
 const validator = require("../utils/validator");
 const taskService = require("../services/task.services");
 const {httpSuccessObject, httpWarnObject} = require("../utils/responseObject");
