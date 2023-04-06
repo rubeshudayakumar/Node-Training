@@ -19,7 +19,7 @@ app.use("/user",userRouter);
 app.use("/task",taskRouter);
 
 app.use("/",(req,res) => {
-    res.status(404).send({"message":"couldn't display the requested page"})
+    res.status(404).send({"message":"couldn't display the requested page"});
 });
 
 app.listen(4000,() => {
