@@ -1,1 +1,7 @@
 warn: Apr-06-2023 10:10:22: 	403 - username and passwords are invalid format - /user/login - POST - ::1
+warn: Apr-06-2023 10:26:33: 	403 - username and passwords are invalid format - /user/login - POST - ::1
+warn: Apr-06-2023 10:27:30: 	403 - password incorrect - /user/login - POST - ::1
+warn: Apr-06-2023 10:39:14: 	403 - [object Object] - /task/filter - GET - ::1
+warn: Apr-06-2023 10:40:29: 	403 - Invalid filter option - /task/filter - GET - ::1
+warn: Apr-06-2023 10:59:57: 	403 - invalid option - /task/filter - GET - ::1
+warn: Apr-06-2023 11:04:55: 	403 - invalid option - /task/sort - GET - ::1

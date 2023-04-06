@@ -8,12 +8,8 @@ router.get("/read-all",authentication,taskController.readAllTasks);
 
 router.delete("/delete",authentication,taskController.deleteTask);
 
-router.get("/filter",authentication,taskController.filterTask);
-
 router.get("/read-by-id",authentication,taskController.readTaskById);
 
-router.get("/sort",authentication,taskController.sortTask);
-
-router.put("/update",authentication,taskController.updateTask);
+router.get("/get-tasks-by-options",authentication,taskController.getTask);
 
 module.exports = router;

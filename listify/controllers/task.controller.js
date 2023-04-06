@@ -73,20 +73,35 @@ const deleteTask = async (req,res) => {
     httpSuccessObject(req,res,{message : "task was deleted successfully"});
 }
 
-const filterTask = (req,res) => {
-    res.send({"message": "filter task router"});
-}
-
-const sortTask = (req,res) => {
-    res.send({"message" : "sort task route"});
+const getTask = async (req,res) => {
+    const options = ["title","priority","dueDate"];
+    if(!(options.includes(req.body.option))){
+        return httpWarnObject(req,res,"invalid option");
+    }
+    let computedTasks = [];
+    const tasks = await taskService.readTask(req,res);
+    const userTasks = tasks[req.user.userName];
+    if(req.body.action == "sort"){
+        computedTasks = userTasks.sort((taskA,taskB) => taskA[req.body.option].localeCompare(taskB[req.body.option]));
+    }
+    else if(req.body.action == "filter"){
+        computedTasks = userTasks.filter((task) => task[req.body.option] == req.body.value);
+    }
+    else{
+        return httpWarnObject(req,res,"invalid option");
+    }
+    const tasksPerPage = req.body.itemsPerPage;
+    const startIndex = (req.body.pageNumber - 1) * tasksPerPage;
+    const endIndex = startIndex + tasksPerPage;
+    const page = computedTasks.slice(startIndex, endIndex);
+    httpSuccessObject(req,res,page);
 }
 
 module.exports = {
-    filterTask,
-    sortTask,
     createTask,
     deleteTask,
     updateTask,
     readTaskById,
     readAllTasks,
+    getTask,
 }

@@ -7,7 +7,7 @@ const httpSuccessObject = (req,res,data) => {
 
 const httpWarnObject = (req,res,err) => {
     warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-    res.status(403).send({"message": err});
+    res.status(403).send({message: err});
 }
 
 const httpErrorObject = (req,res,err) => {
