@@ -11,7 +11,7 @@ const httpWarnObject = (req,res,err) => {
 }
 
 const httpErrorObject = (req,res,err) => {
-    errorLogger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+    errorLogger.error(`${err.status || 500} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
     res.status(500).send({message: err.message});
 }
 

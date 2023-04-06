@@ -1,2 +1,10 @@
 error: Apr-05-2023 09:27:22: 	500 - ENOENT: no such file or directory, open './data/user_ data.json' - /user/login - POST - ::1
 error: Apr-06-2023 09:47:58: 	500 - ENOENT: no such file or directory, open './data/user_dat.json' - /user/login - POST - ::1
+error: Apr-06-2023 12:22:18: 	500 - undefined - /user/login - POST - ::1
+error: Apr-06-2023 12:23:09: 	500 - undefined - /user/login - POST - ::1
+error: Apr-06-2023 12:24:05: 	500 - error resourse not found - /user/login - POST - ::1
+error: Apr-06-2023 12:25:11: 	500 - error resourse not found - /user/login - POST - ::1
+error: Apr-06-2023 12:25:27: 	500 - error resourse not found - /user/login - POST - ::1
+error: Apr-06-2023 12:26:10: 	500 - Error: ENOENT: no such file or directory, open './data/user_dta.json' - /user/login - POST - ::1
+error: Apr-06-2023 12:26:31: 	500 - error resourse not found - /task/read-all - GET - ::1
+error: Apr-06-2023 12:26:46: 	500 - Error: ENOENT: no such file or directory, open './data/task_data.json' - /task/read-all - GET - ::1
