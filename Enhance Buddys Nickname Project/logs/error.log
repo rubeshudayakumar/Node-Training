@@ -8,3 +8,4 @@ error: Apr-05-2023 22:58:12: 	500 - ENOENT: no such file or directory, open './d
 error: Apr-05-2023 22:58:13: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
 error: Apr-05-2023 22:58:45: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
 error: Apr-05-2023 23:00:05: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_budies.json' - /buddy/get-buddy/333 - GET - ::ffff:127.0.0.1
+error: Apr-06-2023 09:53:13: 	500 - ENOENT: no such file or directory, open './data/cdw_ace23_buddis.json' - /buddy/list-all-buddies - GET - ::ffff:127.0.0.1
