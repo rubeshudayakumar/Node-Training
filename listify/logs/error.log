@@ -1,3 +1,45 @@
 error: Apr-07-2023 15:46:01: 	500 - ENOENT: no such file or directory, open './data/usr_data.json' - /users/login - POST - ::1
 error: Apr-07-2023 16:03:15: 	500 - ENOENT: no such file or directory, open './data/use_data.json' - /users/login - POST - ::1
 error: Apr-07-2023 16:05:21: 	500 - ENOENT: no such file or directory, open './data/usr_data.json' - /users/register - POST - ::1
+error: Apr-09-2023 23:10:47: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/70297 - DELETE - ::1
+error: Apr-09-2023 23:10:52: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/70297 - DELETE - ::1
+error: Apr-09-2023 23:12:11: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:14:17: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:14:28: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:14:37: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:14:41: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:15:56: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:16:10: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:17:17: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/48167 - DELETE - ::1
+error: Apr-09-2023 23:18:22: 	500 - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle - /tasks/1567890 - DELETE - ::1
+error: Apr-09-2023 23:39:08: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/tasks-get/?page=1&size=3&action=sort&option=title - POST - ::1

@@ -1,6 +1,6 @@
 const validator = require("../utils/validator");
 const taskService = require("../services/task.services");
-const {httpSuccessObject, httpWarnObject} = require("../utils/responseObject");
+const {httpSuccessObject, httpWarnObject,httpErrorObject} = require("../utils/responseObject");
 
 const sendResponse = (res,response) => {
     res.status(response.status).send(response.data);
@@ -39,7 +39,7 @@ const readAllTasks = async (req,res) => {
             response = httpSuccessObject({message : "there are no tasks to display"})
             sendResponse(res,response);
         }else{
-            response = httpSuccessObject(userTasks);
+            response = httpSuccessObject({data : userTasks});
             sendResponse(res,response);
         }
     }
@@ -114,7 +114,7 @@ const deleteTask = async (req,res) => {
         const taskData = await taskService.readTask(req,res);
         const taskIndex = validator.checkIfTaskExists(taskData[req.user.userName],req.params.id);
         if(taskIndex==-1){
-            response = httpWarnObject(req,res,"can't delete the task which doesn't exists");
+            response = httpWarnObject(req,"can't delete the task which doesn't exists");
             return sendResponse(res,response);
         }
         taskData[req.user.userName].splice(taskIndex,1);
@@ -132,18 +132,18 @@ const getTask = async (req,res) => {
     let response;
     try{
         const options = ["title","priority","dueDate"];
-        if(!(options.includes(req.body.option))){
+        if(!(options.includes(req.query.option))){
             response = httpWarnObject(req,"invalid option");
             return sendResponse(res,response);
         }
         let computedTasks = [];
         const tasks = await taskService.readTask(req,res);
         const userTasks = tasks[req.user.userName];
-        if(req.body.action == "sort"){
-            computedTasks = userTasks.sort((taskA,taskB) => taskA[req.body.option].localeCompare(taskB[req.body.option]));
+        if(req.query.action == "sort"){
+            computedTasks = userTasks.sort((taskA,taskB) => taskA[req.query.option].localeCompare(taskB[req.query.option]));
         }
-        else if(req.body.action == "filter"){
-            computedTasks = userTasks.filter((task) => task[req.body.option] == req.body.value);
+        else if(req.query.action == "filter"){
+            computedTasks = userTasks.filter((task) => task[req.query.option] == req.query.value);
         }
         else{
             response = httpWarnObject(req,"invalid option");
@@ -153,7 +153,8 @@ const getTask = async (req,res) => {
         const startIndex = (req.query.page - 1) * tasksPerPage;
         const endIndex = startIndex + tasksPerPage;
         const page = computedTasks.slice(startIndex, endIndex);
-        httpSuccessObject(page);
+        const response = httpSuccessObject({data : page});
+        sendResponse(res,response);
     }
     catch(err){
         response = httpErrorObject(req,err.message);

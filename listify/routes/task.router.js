@@ -10,7 +10,7 @@ router.delete("/:id",authentication,taskController.deleteTask);
 
 router.get("/:id",authentication,taskController.readTaskById);
 
-router.get("/",authentication,taskController.getTask);
+router.post("/tasks-get",authentication,taskController.getTask);
 
 router.put("/:id",authentication,taskController.updateTask);
 
