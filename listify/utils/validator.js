@@ -18,15 +18,6 @@ const userIdAndPasswordValidator = (user) => {
     return true;
 }
 
-const isUserExists = (users,userName) => {
-    for(var i=0;i<users.length;i++){
-        if(users[i].userName==userName){
-            return i;
-        }
-    }
-    return -1;
-}
-
 const taskValidateObjects = [
     {
         keyName: "taskId",
@@ -89,7 +80,6 @@ const checkIfTaskExists = (tasks,taskId) => {
 
 module.exports = {
     userIdAndPasswordValidator,
-    isUserExists,
     taskValidator,
     taskIdValidator,
     checkIfTaskExists,

@@ -1,18 +1,31 @@
 const errorLogger = require("../utils/logger").errorLogger;
 const warnLogger = require("../utils/logger").warnLogger;
 
-const httpSuccessObject = (req,res,data) => {
-    res.status(200).send(data);
+const httpSuccessObject = (data) => {
+    return {
+        status: 200,
+        data : data
+    };
 }
 
-const httpWarnObject = (req,res,err) => {
+const httpWarnObject = (req,err) => {
     warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-    res.status(403).send({message: err});
+    return {
+        status: 403,
+        data: {
+            message : err,
+        }
+    }
 }
 
-const httpErrorObject = (req,res,err) => {
+const httpErrorObject = (req,err) => {
     errorLogger.error(`${err.status || 500} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-    res.status(500).send({message: err.message});
+    return {
+        status : 500,
+        data : {
+            message : err,
+        }
+    };
 }
 
 module.exports = {

@@ -1,7 +1,11 @@
-warn: Apr-06-2023 10:10:22: 	403 - username and passwords are invalid format - /user/login - POST - ::1
-warn: Apr-06-2023 10:26:33: 	403 - username and passwords are invalid format - /user/login - POST - ::1
-warn: Apr-06-2023 10:27:30: 	403 - password incorrect - /user/login - POST - ::1
-warn: Apr-06-2023 10:39:14: 	403 - [object Object] - /task/filter - GET - ::1
-warn: Apr-06-2023 10:40:29: 	403 - Invalid filter option - /task/filter - GET - ::1
-warn: Apr-06-2023 10:59:57: 	403 - invalid option - /task/filter - GET - ::1
-warn: Apr-06-2023 11:04:55: 	403 - invalid option - /task/sort - GET - ::1
+warn: Apr-07-2023 15:46:16: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-07-2023 15:49:47: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-07-2023 15:50:47: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-07-2023 15:50:51: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-07-2023 15:50:58: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-07-2023 16:02:48: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-07-2023 16:02:54: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-07-2023 16:03:30: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-07-2023 16:05:28: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-07-2023 17:11:59: 	403 - task doesn't exists - /tasks/2 - PUT - ::1
+warn: Apr-07-2023 17:13:19: 	403 - task doesn't exists - /tasks/1vb - PUT - ::1

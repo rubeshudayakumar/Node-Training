@@ -3,18 +3,13 @@ const { httpErrorObject } = require("../utils/responseObject");
 
 const readUser = (req,res) => {
     return new Promise((resolve,reject) => {
-        try{
-            fs.readFile("./data/user_data.json","UTF-8",(err,data) => {
-                if(err){
-                    httpErrorObject(req,res,err);
-                }else{
-                    resolve(JSON.parse(data));
-                }
-            });
-        }
-        catch(err){
-            reject(err);
-        }
+        fs.readFile("./data/user_data.json","UTF-8",(err,data) => {
+            if(err){
+                reject(err);
+            }else{
+                resolve(JSON.parse(data));
+            }
+        });
     });
 }
 
@@ -36,7 +31,17 @@ const writeUser = (req,res,data) => {
     });
 }
 
+const isUserExists = (users,userName) => {
+    for(var i=0;i<users.length;i++){
+        if(users[i].userName==userName){
+            return i;
+        }
+    }
+    return -1;
+}
+
 module.exports = {
     readUser,
     writeUser,
+    isUserExists,
 }

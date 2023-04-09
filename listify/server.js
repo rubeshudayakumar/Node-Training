@@ -15,8 +15,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cors(corsOptions));
 
-app.use("/user",userRouter);
-app.use("/task",taskRouter);
+app.use("/users",userRouter);
+app.use("/tasks",taskRouter);
 
 app.use("/",(req,res) => {
     res.status(404).send({"message":"couldn't display the requested page"});
