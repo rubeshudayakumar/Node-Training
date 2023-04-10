@@ -62,9 +62,10 @@ describe("Create Task API", () => {
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
     });
-    const actualResponse = await createTask(requestData);
-
+    const response = await createTask(requestData);
+    const actualResponse = await response.json();
     expect(actualResponse).toEqual(expectedResponse);
+    expect(response.status).toBe(403);
   });
 
   it("tasks title is invalid", async () => {
@@ -91,8 +92,9 @@ describe("Create Task API", () => {
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
     });
-    const actualResponse = await createTask(requestData);
-
+    const response = await createTask(requestData);
+    const actualResponse = await response.json();
+    expect(response.status).toEqual(403);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -120,8 +122,9 @@ describe("Create Task API", () => {
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
     });
-    const actualResponse = await createTask(requestData);
-
+    const response = await createTask(requestData);
+    const actualResponse = await response.json();
+    expect(response.status).toEqual(403);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -149,8 +152,9 @@ describe("Create Task API", () => {
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
     });
-    const actualResponse = await createTask(requestData);
-
+    const response = await createTask(requestData);
+    const actualResponse = await response.json();
+    expect(response.status).toEqual(403);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -178,8 +182,9 @@ describe("Create Task API", () => {
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
     });
-    const actualResponse = await createTask(requestData);
-
+    const response = await createTask(requestData);
+    const actualResponse = await response.json();
+    expect(response.status).toEqual(403);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -194,7 +199,7 @@ describe("Create Task API", () => {
       body: JSON.stringify(requestData),
     });
 
-    return await response.json();
+    return await response;
   }
 
   function generateRandomTaskId(length) {

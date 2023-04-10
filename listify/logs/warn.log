@@ -1594,3 +1594,250 @@ warn: Apr-09-2023 23:43:09: 	403 - user already exists - /users/register - POST 
 warn: Apr-09-2023 23:43:09: 	403 - username and passwords are invalid format - /users/register - POST - ::1
 warn: Apr-09-2023 23:43:09: 	403 - username and passwords are invalid format - /users/register - POST - ::1
 warn: Apr-09-2023 23:43:09: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:11:20: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:20: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:20: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:11:20: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:11:20: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:11:48: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:48: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:48: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:48: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:48: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:49: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:11:49: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:11:49: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:11:49: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:04: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:04: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:12:04: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:04: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:05: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:12:40: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:40: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:40: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:40: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:40: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:41: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:12:41: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:12:41: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:12:41: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:13:45: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:13:45: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:13:45: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:13:45: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:13:45: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:13:46: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:13:46: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:13:46: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:13:46: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:13:46: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:13:46: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:03: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:03: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:14:03: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:03: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:14:22: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:22: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:22: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:22: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:22: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:23: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:23: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:23: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:23: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:14:23: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:23: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:33: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:14:33: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:14:33: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:14:33: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:15:10: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:15:10: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:15:10: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:15:10: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:16:53: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:16:53: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:16:53: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:16:53: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:25: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:25: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:18:25: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:18:25: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:18:26: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:52: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:18:52: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:18:52: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:18:52: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:18:53: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
+warn: Apr-10-2023 10:19:06: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - tasks details are invalid - /tasks/ - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - username and passwords are invalid format - /users/login - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:19:06: 	403 - password incorrect - /users/login - POST - ::1
+warn: Apr-10-2023 10:19:07: 	403 - username incorrect! - /users/login - POST - ::1
+warn: Apr-10-2023 10:19:07: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:19:07: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:19:07: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:19:07: 	403 - tasks details are invalid - /tasks/51738 - PUT - ::1
+warn: Apr-10-2023 10:19:07: 	403 - task doesn't exists - /tasks/DFGH - PUT - ::1
+warn: Apr-10-2023 10:19:07: 	403 - user already exists - /users/register - POST - ::1
+warn: Apr-10-2023 10:19:07: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:19:07: 	403 - username and passwords are invalid format - /users/register - POST - ::1
+warn: Apr-10-2023 10:19:07: 	403 - can't delete the task which doesn't exists - /tasks/48167 - DELETE - ::1
