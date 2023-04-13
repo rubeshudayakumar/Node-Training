@@ -12,12 +12,11 @@ describe("Read All tasks API", () => {
 
   it("no tasks to display", async () => {
     const requestData = {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImhhcmloYXIiLCJpYXQiOjE2ODEwNTk4MjZ9.SGzULQbxf8vlDqOXZODdyaYZLZTKhZiNxZQAUiwlO48",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtcHR5dXNlciIsImlhdCI6MTY4MTM4MzUyMX0.xjNIoAgGvcmDvDUUOi1AwLpjyxVrSLebEIkX1vJd_zw",
     };
-    const expectedResponse = {message : "there are no tasks to display"};
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = {status: "SUCCESS","message": {
+      "message": "there are no tasks to display"
+  },code: 200};
     const actualResponse = await readTasks(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });
@@ -26,11 +25,8 @@ describe("Read All tasks API", () => {
     const requestData = {
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImhhcmloYXJhbiIsImlhdCI6MTY4MTA2MDExOX0.0bxJMK3dK_TV7UbrndlTd5ztnRMWgxge9ybGiteev-s",
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await readTasks(requestData);
-    expect(actualResponse).toHaveProperty("data");
+    expect(actualResponse).toHaveProperty("message");
   });
 
   async function readTasks(requestData) {

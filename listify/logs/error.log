@@ -43,3 +43,24 @@ error: Apr-09-2023 23:18:22: 	500 - Converting circular structure to JSON
     |     property 'parser' -> object with constructor 'HTTPParser'
     --- property 'socket' closes the circle - /tasks/1567890 - DELETE - ::1
 error: Apr-09-2023 23:39:08: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/tasks-get/?page=1&size=3&action=sort&option=title - POST - ::1
+error: Apr-12-2023 18:48:12: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:12: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:12: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:12: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:12: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:18: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:18: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:18: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:18: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 18:48:18: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/ - POST - ::1
+error: Apr-12-2023 19:03:19: 	500 - Cannot read properties of undefined (reading 'status') - /users/login - POST - ::1
+error: Apr-12-2023 19:03:47: 	500 - Cannot read properties of undefined (reading 'status') - /users/login - POST - ::1
+error: Apr-12-2023 19:04:40: 	500 - Cannot read properties of undefined (reading 'status') - /users/login - POST - ::1
+error: Apr-12-2023 19:15:42: 	500 - isTaskFound is not defined - /tasks/51738 - GET - ::1
+error: Apr-12-2023 19:15:42: 	500 - isTaskFound is not defined - /tasks/70297679 - GET - ::1
+error: Apr-12-2023 19:15:59: 	500 - taskData is not defined - /tasks/51738 - GET - ::1
+error: Apr-13-2023 15:44:49: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/2 - DELETE - ::1
+error: Apr-13-2023 16:00:18: 	500 - Cannot read properties of undefined (reading 'status') - /tasks/4 - DELETE - ::1
+error: Apr-13-2023 16:01:07: 	500 - Cannot access 'response' before initialization - /tasks/4 - DELETE - ::1
+error: Apr-13-2023 16:06:39: 	500 - ENOENT: no such file or directory, open './data/user _data.json' - /users/login - POST - ::1
+error: Apr-13-2023 16:08:06: 	500 - ENOENT: no such file or directory, open './data/user _data.json' - /users/login - POST - ::1

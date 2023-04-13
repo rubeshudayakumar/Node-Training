@@ -31,7 +31,7 @@ describe("Read task by id", () => {
             ]
         },
     };
-    const expectedResponse = {message : "task was updated successfully"};
+    const expectedResponse = {status : "SUCCESS", message : { message : "task was updated successfully"},code : 200};
 
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
@@ -61,7 +61,7 @@ describe("Read task by id", () => {
             ]
         },
     };
-    const expectedResponse = {message : "tasks details are invalid"};
+    const expectedResponse = { status: "WARNING", message: "tasks details are invalid" ,code : 400};
 
     sinon.fake.resolves({
       json: () => Promise.resolve(expectedResponse),
@@ -91,11 +91,7 @@ describe("Read task by id", () => {
             ]
         },
     };
-    const expectedResponse = {message : "tasks details are invalid"};
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status: "WARNING", message: "tasks details are invalid" ,code : 400};
     const actualResponse = await updateTask(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });
@@ -121,11 +117,7 @@ describe("Read task by id", () => {
             ]
         },
     };
-    const expectedResponse = {message : "tasks details are invalid"};
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status: "WARNING", message: "tasks details are invalid" ,code : 400};
     const actualResponse = await updateTask(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });
@@ -151,11 +143,7 @@ describe("Read task by id", () => {
             ]
         },
     };
-    const expectedResponse = {message : "tasks details are invalid"};
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status: "WARNING", message: "tasks details are invalid" ,code : 400};
     const actualResponse = await updateTask(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });
@@ -182,11 +170,7 @@ describe("Read task by id", () => {
         },
     };
 
-    const expectedResponse = {message : "task doesn't exists"};
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status: "WARNING", message:  "task doesn't exists" ,code : 400};
     const actualResponse = await updateTask(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });

@@ -14,22 +14,16 @@ describe("Read All tasks API", () => {
     const requestData = {
       "url" : "http://localhost:4000/tasks/tasks-get/?page=1&size=3&action=sort&option=title",
   };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await getTasks(requestData);
-    expect(actualResponse).toHaveProperty("data");
+    expect(actualResponse).toHaveProperty("message");
   });
 
   it("filter option", async () => {
     const requestData = {
       "url" : "http://localhost:4000/tasks/tasks-get/?page=1&size=3&action=filter&option=title&value=complete java exercise yes",
   };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await getTasks(requestData);
-    expect(actualResponse).toHaveProperty("data");
+    expect(actualResponse).toHaveProperty("message");
   });
 
   async function getTasks(requestData) {

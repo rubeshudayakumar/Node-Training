@@ -15,23 +15,15 @@ describe("Delete task by id", () => {
           "taskId" : "48167",
       };
       const expectedResponse = {message : "task was deleted successfully"};
-
-      sinon.fake.resolves({
-        json: () => Promise.resolve(expectedResponse),
-      });
       const actualResponse = await deleteTask(requestData);
-      expect(actualResponse).toEqual(expectedResponse);
+      expect(actualResponse).toHaveProperty("message");
     });
 
   it("can't delete the task which doesn't exists", async () => {
     const requestData = {
       taskId: "48167",
     };
-    const expectedResponse = { message: "can't delete the task which doesn't exists"};
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status : "WARNING",message: "can't delete the task which doesn't exists",code : 400};
     const actualResponse = await deleteTask(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });

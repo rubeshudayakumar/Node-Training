@@ -28,11 +28,7 @@ describe("Create Task API", () => {
           }
       ]
   };
-    const expectedResponse = {message: "task was created successfully"};
-
-      sinon.fake.resolves({
-          json: () => Promise.resolve(expectedResponse)
-      });
+    const expectedResponse = {status : 'SUCCESS',message: "task was created successfully",code: 200};
     const actualResponse = await createTask(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -57,15 +53,11 @@ describe("Create Task API", () => {
       ],
     };
 
-    const expectedResponse = { message: "tasks details are invalid" };
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status: "WARNING", message: "tasks details are invalid" ,code : 400};
     const response = await createTask(requestData);
     const actualResponse = await response.json();
     expect(actualResponse).toEqual(expectedResponse);
-    expect(response.status).toBe(403);
+    expect(response.status).toBe(400);
   });
 
   it("tasks title is invalid", async () => {
@@ -87,14 +79,10 @@ describe("Create Task API", () => {
       ],
     };
 
-    const expectedResponse = { message: "tasks details are invalid" };
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = {status: "WARNING", message: "tasks details are invalid",code : 400 };
     const response = await createTask(requestData);
     const actualResponse = await response.json();
-    expect(response.status).toEqual(403);
+    expect(response.status).toEqual(400);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -117,14 +105,10 @@ describe("Create Task API", () => {
       ],
     };
 
-    const expectedResponse = { message: "tasks details are invalid" };
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { status: "WARNING",message: "tasks details are invalid",code : 400 };
     const response = await createTask(requestData);
     const actualResponse = await response.json();
-    expect(response.status).toEqual(403);
+    expect(response.status).toEqual(400);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -147,14 +131,10 @@ describe("Create Task API", () => {
       ],
     };
 
-    const expectedResponse = { message: "tasks details are invalid" };
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = {status: "WARNING", message: "tasks details are invalid",code: 400 };
     const response = await createTask(requestData);
     const actualResponse = await response.json();
-    expect(response.status).toEqual(403);
+    expect(response.status).toEqual(400);
     expect(actualResponse).toEqual(expectedResponse);
   });
 
@@ -177,14 +157,10 @@ describe("Create Task API", () => {
       ],
     };
 
-    const expectedResponse = { message: "tasks details are invalid" };
-
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = {status: "WARNING", message: "tasks details are invalid" ,code : 400};
     const response = await createTask(requestData);
     const actualResponse = await response.json();
-    expect(response.status).toEqual(403);
+    expect(response.status).toEqual(400);
     expect(actualResponse).toEqual(expectedResponse);
   });
 

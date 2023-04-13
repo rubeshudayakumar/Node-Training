@@ -4,16 +4,22 @@ const warnLogger = require("../utils/logger").warnLogger;
 const httpSuccessObject = (data) => {
     return {
         status: 200,
-        data : data
+        data : {
+            status: "SUCCESS",
+            message : data,
+            code : 200,
+        }
     };
 }
 
 const httpWarnObject = (req,err) => {
-    warnLogger.warn(`${err.status || 403} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+    warnLogger.warn(`${err.status || 400} - ${err} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
     return {
-        status: 403,
+        status: 400,
         data: {
+            status : "WARNING",
             message : err,
+            code: 400,
         }
     }
 }
@@ -23,7 +29,9 @@ const httpErrorObject = (req,err) => {
     return {
         status : 500,
         data : {
-            message : err,
+            status : "ERROR",
+            message : "Some error occured while processing the data",
+            code : 500
         }
     };
 }

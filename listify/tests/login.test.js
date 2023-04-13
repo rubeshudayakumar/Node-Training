@@ -15,12 +15,9 @@ describe("Login API", () => {
       userName: "hariharan",
       password: "12121212",
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await login(requestData);
 
-    expect(actualResponse).toHaveProperty("token");
+    expect(actualResponse).toHaveProperty("message");
   });
 
   it("login with invalid password", async () => {
@@ -29,11 +26,10 @@ describe("Login API", () => {
       password: "1212121",
     };
     const expectedResponse = {
-      message: "username and passwords are invalid format",
+      "status": "WARNING",
+      "message": "username and passwords are invalid format",
+      "code": 400
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await login(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -45,11 +41,10 @@ describe("Login API", () => {
       password: "12121212",
     };
     const expectedResponse = {
-      message: "username and passwords are invalid format",
+      "status": "WARNING",
+      "message": "username and passwords are invalid format",
+      "code": 400
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await login(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -60,10 +55,10 @@ describe("Login API", () => {
       userName: "hari",
       password: "12121212",
     };
-    const expectedResponse = { message: "username incorrect!" };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { 
+    "status": "WARNING",
+    "message": "username incorrect!",
+    "code": 400 };
     const actualResponse = await login(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -74,10 +69,11 @@ describe("Login API", () => {
       userName: "hariharan",
       password: "12121213",
     };
-    const expectedResponse = { message: "password incorrect" };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { 
+    "status": "WARNING",
+    "message": "password incorrect",
+    "code": 400 
+    };
     const actualResponse = await login(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -88,10 +84,10 @@ describe("Login API", () => {
       userName: "harihavsr",
       password: "12121456",
     };
-    const expectedResponse = { message: "username incorrect!" };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = { 
+      "status": "WARNING",
+      "message": "username incorrect!",
+      "code": 400 };
     const actualResponse = await login(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);

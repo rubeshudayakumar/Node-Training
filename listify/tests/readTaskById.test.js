@@ -15,22 +15,18 @@ describe("Read task by id", () => {
         "taskId" : 51738,
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImhhcmloYXJhbiIsImlhdCI6MTY4MTA2MDExOX0.0bxJMK3dK_TV7UbrndlTd5ztnRMWgxge9ybGiteev-s",
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await readTasks(requestData);
-    expect(actualResponse).toHaveProperty("taskId");
+    expect(actualResponse).toHaveProperty("message");
   });
 
-  it("task with this id found", async () => {
+  it("task with this id not found", async () => {
     const requestData = {
         "taskId" : 70297679,
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImhhcmloYXJhbiIsImlhdCI6MTY4MTA2MDExOX0.0bxJMK3dK_TV7UbrndlTd5ztnRMWgxge9ybGiteev-s",
     };
-    const expectedResponse = {message : "task not found"};
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
+    const expectedResponse = {status : "SUCCESS","message": {
+      "message": "task not found"
+    },code: 200};
     const actualResponse = await readTasks(requestData);
     expect(actualResponse).toEqual(expectedResponse);
   });

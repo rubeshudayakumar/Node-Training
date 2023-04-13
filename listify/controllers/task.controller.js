@@ -1,6 +1,7 @@
 const validator = require("../utils/validator");
 const taskService = require("../services/task.services");
 const {httpSuccessObject, httpWarnObject,httpErrorObject} = require("../utils/responseObject");
+const constants = require("../utils/constants");
 
 const sendResponse = (res,response) => {
     res.status(response.status).send(response.data);
@@ -10,18 +11,18 @@ const createTask = async (req,res) => {
     let response;
     try{
         if(!validator.taskValidator(req.body)){
-            response =  httpWarnObject(req,"tasks details are invalid");
+            response =  httpWarnObject(req,constants.TASK_DETAILS_INVALID);
             return sendResponse(res,response);
         }
         const taskData = await taskService.readTask(req,res);
         console.log(validator.checkIfTaskExists(taskData[req.user.userName],req.body.taskId));
         if(validator.checkIfTaskExists(taskData[req.user.userName],req.body.taskId)!=-1){
-            response =  httpWarnObject(req,res,"task with this id already exists");
+            response =  httpWarnObject(req,res,constants.TASK_ID_ALREADY_EXISTS);
             return sendResponse(res,response);
         }
         taskData[req.user.userName].push(req.body);
         await taskService.writeTask(req,res,taskData);
-        response = httpSuccessObject({message: "task was created successfully"});
+        response = httpSuccessObject({message: constants.TASK_CREATED_SUCCESSFULLY});
         sendResponse(res,response);
     }
     catch(err){
@@ -36,7 +37,7 @@ const readAllTasks = async (req,res) => {
         const tasks = await taskService.readTask(req,res);
         const userTasks = tasks[req.user.userName];
         if(userTasks.length == 0){
-            response = httpSuccessObject({message : "there are no tasks to display"})
+            response = httpSuccessObject({message : constants.NO_TASKS_TO_DISPLAY})
             sendResponse(res,response);
         }else{
             response = httpSuccessObject({data : userTasks});
@@ -49,28 +50,23 @@ const readAllTasks = async (req,res) => {
     }
 }
 
+
+
 const readTaskById = async (req,res) => {
     let response;
     try{
         const userTasks = await taskService.readTask(req,res);
         const tasks = userTasks[req.user.userName];
         if(validator.taskIdValidator(req.params.id) == false){
-            response =  httpWarnObject(req,"invalid id");
+            response =  httpWarnObject(req,constants.INVALID_ID);
             return sendResponse(res,response);
         }
-        let isTaskFound = false;
-        let taskData = {};
-        tasks.forEach(task => {
-            if(task.taskId==req.params.id){
-                taskData = task;
-                isTaskFound = true;
-            }
-        });
-        if(isTaskFound) {
+        let [taskIsfound,taskData] = validator.findTask(req.params.id,tasks);
+        if(taskIsfound) {
             response = httpSuccessObject(taskData);
             sendResponse(res,response);
         }else{
-            response = httpSuccessObject({message : "task not found"});
+            response = httpSuccessObject({message : constants.TASK_NOT_FOUND});
             sendResponse(res,response);
         }
     }
@@ -86,16 +82,16 @@ const updateTask = async (req,res) => {
         const taskData = await taskService.readTask(req,res);
         const taskIndex = validator.checkIfTaskExists(taskData[req.user.userName],req.params.id);
         if(taskIndex==-1){
-            response = httpWarnObject(req,"task doesn't exists");
+            response = httpWarnObject(req,constants.TASK_NOT_EXISTS);
             return sendResponse(res,response);
         }
         if(!validator.taskValidator(req.body)){
-            response = httpWarnObject(req,"tasks details are invalid");
+            response = httpWarnObject(req,constants.TASK_DETAILS_INVALID);
             return sendResponse(res,response);
         }
         taskData[req.user.userName][taskIndex] = req.body;
         await taskService.writeTask(req,res,taskData);
-        response = httpSuccessObject({message : "task was updated successfully"});
+        response = httpSuccessObject({message : constants.TASK_UPDATED});
         sendResponse(res,response);
     }
     catch(err){
@@ -108,18 +104,18 @@ const deleteTask = async (req,res) => {
     let response;
     try{
         if(validator.taskIdValidator(req.params.id) == false){
-            response = httpWarnObject(req,"invalid id");
+            response = httpWarnObject(req,constants.INVALID_ID);
             return sendResponse(res,response);
         }
         const taskData = await taskService.readTask(req,res);
         const taskIndex = validator.checkIfTaskExists(taskData[req.user.userName],req.params.id);
         if(taskIndex==-1){
-            response = httpWarnObject(req,"can't delete the task which doesn't exists");
+            response = httpWarnObject(req,constants.TASK_UNABLE_TO_DELETE_NON_EXISTING_TASK);
             return sendResponse(res,response);
         }
         taskData[req.user.userName].splice(taskIndex,1);
         await taskService.writeTask(req,res,taskData);
-        httpSuccessObject({message : "task was deleted successfully"});
+        response = httpSuccessObject({message : constants.TASK_DELETED});
         sendResponse(res,response);
     }
     catch(err){
@@ -133,7 +129,7 @@ const getTask = async (req,res) => {
     try{
         const options = ["title","priority","dueDate"];
         if(!(options.includes(req.query.option))){
-            response = httpWarnObject(req,"invalid option");
+            response = httpWarnObject(req,constants.INVALID_OPTION);
             return sendResponse(res,response);
         }
         let computedTasks = [];
@@ -146,7 +142,7 @@ const getTask = async (req,res) => {
             computedTasks = userTasks.filter((task) => task[req.query.option] == req.query.value);
         }
         else{
-            response = httpWarnObject(req,"invalid option");
+            response = httpWarnObject(req,constants.INVALID_OPTION);
             return sendResponse(res,response);
         }
         const tasksPerPage = req.query.size;

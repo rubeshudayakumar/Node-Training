@@ -62,6 +62,18 @@ const taskValidator = (task) => {
     return true;
 }
 
+const findTask = (taskId,tasks) => {
+    let isTaskFound = false;
+    let taskData = {};
+    tasks.forEach(task => {
+        if(task.taskId==taskId){
+            taskData = task;
+            isTaskFound = true;
+        }
+    });
+    return [isTaskFound,taskData];
+}
+
 const taskIdValidator = (taskId) => {
     if((/^[0-9]{1,10}$/).test(taskId) == false || taskId == undefined){
         return false;
@@ -83,4 +95,5 @@ module.exports = {
     taskValidator,
     taskIdValidator,
     checkIfTaskExists,
+    findTask
 }
