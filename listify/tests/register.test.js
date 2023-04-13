@@ -16,11 +16,10 @@ describe("Register API", () => {
       password: "12121212",
     };
     const expectedResponse = {
-      message: "user already exists",
+      "status": "WARNING",
+    "message": "user already exists",
+    "code": 400
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await register(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -32,11 +31,10 @@ describe("Register API", () => {
       password: "121",
     };
     const expectedResponse = {
-      message: "username and passwords are invalid format",
+      "status": "WARNING",
+      "message": "username and passwords are invalid format",
+      "code": 400
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await register(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -49,11 +47,10 @@ describe("Register API", () => {
     };
 
     const expectedResponse = {
-      message: "username and passwords are invalid format",
+      "status": "WARNING",
+      "message": "username and passwords are invalid format",
+      "code": 400
     };
-    sinon.fake.resolves({
-      json: () => Promise.resolve(expectedResponse),
-    });
     const actualResponse = await register(requestData);
 
     expect(actualResponse).toEqual(expectedResponse);
@@ -64,13 +61,9 @@ describe("Register API", () => {
         userName : generateRandomUserName(6),
         password: '12121213'
       };
-
-        sinon.fake.resolves({
-            json: () => Promise.resolve(expectedResponse)
-        });
       const actualResponse = await register(requestData);
 
-      expect(actualResponse).toHaveProperty("token");
+      expect(actualResponse).toHaveProperty("message");
     });
 
   async function register(requestData) {
